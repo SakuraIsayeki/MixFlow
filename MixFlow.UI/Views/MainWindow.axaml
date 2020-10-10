@@ -6,10 +6,15 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="MixFlow.UI.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="MixFlow.UI">
+        Title="MixFlow">
 
     <Design.DataContext>
-        <vm:MainWindowViewModel/>
+      <!--<ExperimentalAcrylicBorder>
+        <ExperimentalAcrylicBorder.Material>
+          <ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="Black" TintOpacity="1" MaterialOpacity="1"/>  
+        </ExperimentalAcrylicBorder.Material>
+      </ExperimentalAcrylicBorder>-->
+      <vm:MainWindowViewModel/>
     </Design.DataContext>
 
     <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
