@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MixFlow.Core.Data.Models
 {
-	public record Album : IDataModel<Guid>
+	public record Album
 	{
 		[Key]
 		public Guid Id { get; init; }
@@ -13,8 +13,8 @@ namespace MixFlow.Core.Data.Models
 		public string Name { get; set; }
 
 		
-		public Artist Artist { get; set; }
+		public virtual Artist Artist { get; set; }
 
-		public IList<Track> Tracks { get; set; }
+		public virtual IList<Track> Tracks { get; set; }
 	}
 }

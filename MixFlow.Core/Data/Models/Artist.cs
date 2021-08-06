@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace MixFlow.Core.Data.Models
 {
-	public record Artist : IDataModel<Guid>
+	public record Artist
 	{
 		[Key]
 		public Guid Id { get; init; }
@@ -13,8 +12,8 @@ namespace MixFlow.Core.Data.Models
 		[Required]
 		public string Name { get; set; }
 
-		public IEnumerable<Album> Albums { get; set; }
+		public virtual IEnumerable<Album> Albums { get; set; }
 
-		public IEnumerable<Track> Tracks { get; set; }
+		public virtual IEnumerable<Track> Tracks { get; set; }
 	}
 }

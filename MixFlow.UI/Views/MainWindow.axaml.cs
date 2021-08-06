@@ -1,18 +1,17 @@
-﻿using Avalonia;
+using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Chrome;
-using Avalonia.Diagnostics;
 using Avalonia.Markup.Xaml;
-using Avalonia.Media;
-using Avalonia.Themes.Fluent;
 
 namespace MixFlow.UI.Views
 {
-	public class MainWindow : FluentWindow
+	public partial class MainWindow : Window
 	{
 		public MainWindow()
 		{
 			InitializeComponent();
+#if DEBUG
+            this.AttachDevTools();
+#endif
 		}
 
 		private void InitializeComponent()

@@ -7,16 +7,16 @@ namespace MixFlow.UI
 {
 	public class ViewLocator : IDataTemplate
 	{
-		public static bool SupportsRecycling => false;
+		public bool SupportsRecycling => false;
 
 		public IControl Build(object data)
 		{
-			var name = data.GetType().FullName.Replace("ViewModel", "View");
-			var type = Type.GetType(name);
+			string? name = data.GetType().FullName!.Replace("ViewModel", "View");
+			Type? type = Type.GetType(name);
 
-			if (type != null)
+			if (type is not null)
 			{
-				return (Control)Activator.CreateInstance(type);
+				return (Control)Activator.CreateInstance(type)!;
 			}
 			else
 			{
@@ -24,9 +24,6 @@ namespace MixFlow.UI
 			}
 		}
 
-		public bool Match(object data)
-		{
-			return data is ViewModelBase;
-		}
+		public bool Match(object data) => data is ViewModelBase;
 	}
 }

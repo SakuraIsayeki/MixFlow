@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MixFlow.Core.Data.Models
 {
-	public record Genre : IDataModel<Guid>
+	public record Genre
 	{
 		[Key]
 		public Guid Id { get; init; }
